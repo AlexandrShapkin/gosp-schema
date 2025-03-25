@@ -14,7 +14,7 @@ func ConnectDB(dialector *gorm.Dialector) (*gorm.DB, error) {
 	err = db.AutoMigrate(
 		&models.User{},
 		&models.Chat{},
-		&models.ChatPaticipants{},
+		&models.ChatParticipants{},
 		&models.Message{},
 		&models.Token{},
 	)

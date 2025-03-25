@@ -10,6 +10,6 @@ type User struct {
 	Status      string    `gorm:"type:enum('online','offline');default:'offline'"`
 	LastSeen    time.Time `gorm:"autoUpdateTime"`
 
-	Messages    []Message         `gorm:"foreignKey:SenderID"`
-	ChatMembers []ChatPaticipants `gorm:"foreignKey:UserID"`
+	Messages    []Message          `gorm:"foreignKey:SenderID"`
+	ChatMembers []ChatParticipants `gorm:"foreignKey:UserID"`
 }

@@ -1,9 +1,9 @@
 package models
 
-type ChatPaticipants struct {
+type ChatParticipants struct {
 	ChatID string `gorm:"primaryKey"`
 	UserID string `gorm:"primaryKey"`
 
-	Chat Chat `gorm:"foreignKey:ChatID;constraint:OnDelete:CASCADE"`
-	User User `gorm:"foreignKey:UserID;constraint:OnDelete:CASCADE"`
+	Chat *Chat `gorm:"foreignKey:ChatID;constraint:OnDelete:CASCADE"`
+	User *User `gorm:"foreignKey:UserID;constraint:OnDelete:CASCADE"`
 }
