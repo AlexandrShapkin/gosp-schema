@@ -8,8 +8,8 @@ type Message struct {
 	ChatID           string    `gorm:"not null"`
 	EncryptedContent string    `gorm:"not null"`
 	Timestamp        time.Time `gorm:"autoCreateTime"`
-	Status           string    `gorm:"type:enum('delivered','undelivered');default:'undelivered'"`
+	Status           string    `gorm:"type:string;default:'undelivered'"`
 
-	Sender User `gorm:"foreignKey:SenderID;constraint:OnDelete:CASCADE"`
-	Chat   Chat `gorm:"foreignKey:ChatID;constraint:OnDelete:CASCADE"`
+	Sender *User `gorm:"foreignKey:SenderID;constraint:OnDelete:CASCADE"`
+	Chat   *Chat `gorm:"foreignKey:ChatID;constraint:OnDelete:CASCADE"`
 }
