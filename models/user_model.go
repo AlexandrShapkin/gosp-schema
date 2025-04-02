@@ -7,7 +7,7 @@ type User struct {
 	Username    string `gorm:"uniqueIndex;not null"`
 	DisplayName string
 	AvatarUrl   string
-	Status      string    `gorm:"type:enum('online','offline');default:'offline'"`
+	Status      string    `gorm:"type:string;default:'offline'"`
 	LastSeen    time.Time `gorm:"autoUpdateTime"`
 
 	Messages    []Message          `gorm:"foreignKey:SenderID"`
