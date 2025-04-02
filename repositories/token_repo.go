@@ -11,5 +11,5 @@ type TokenRepository interface {
 	GetToken(ctx context.Context, tokenString string) (*models.Token, error)
 	DeleteToken(ctx context.Context, tokenString string) error
 	DeleteExpiredTokens(ctx context.Context) error
-	DeleteTokensByUser(userID string) error
+	DeleteTokensByUser(ctx context.Context, userID string) error
 }
