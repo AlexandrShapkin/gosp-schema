@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type Token struct {
 	ID           string    `gorm:"primaryKey"`
